@@ -34,7 +34,7 @@ class App extends React.Component {
               <Nasa coords={this.props.coords} />
             </Grid>
             <Grid item xs={12} className="restaurant gridWrapper">
-              <Restaurant coords={this.props.coords} />
+              <Restaurant lat={this.props.coords.latitude} long={this.props.coords.longitude} />
             </Grid>
           </Grid>
         </Container>
