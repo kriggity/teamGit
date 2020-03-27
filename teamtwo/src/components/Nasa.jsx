@@ -18,7 +18,13 @@ export default class Nasa extends React.Component {
     componentDidMount() {
         const requestOptions = {
             method: 'GET',
-            redirect: 'follow'
+            redirect: 'follow',
+            mode: 'cors',
+            headers: {
+                'access-control-allow-origin': "*",
+                'access-control-allow-methods': 'GET, POST, PUT, DELETE',
+                'access-control-allow-headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+            }
         };
 
         fetch(`https://api.nasa.gov/planetary/earth/imagery/?lon=${this.state.long}&lat=${this.state.lat}&cloud_score=false&dim=${this.state.dim}&api_key=${this.state.api_key}`, requestOptions)

@@ -1,7 +1,7 @@
 html, body, #root {
   background-color:#efefef; 
 }
-html, body, #root, .MuiPaper-root {
+html, body, #root, .MuiPaper-root h2 {
   color: rgb(56,57,60);
 }
 
