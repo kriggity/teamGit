@@ -63,7 +63,7 @@ export default class Restaurant extends React.Component {
         return (
             <div>
                 
-                <h2>Restaurants</h2>
+                <h3>Restaurants near you:</h3>
                 
                 {this.state.searchResults ? <DisplayRestaurants 
                 single={this.state.single} 
