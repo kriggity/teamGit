@@ -1,5 +1,4 @@
 import React from 'react';
-
 /* 
 Open Weather API -  https://openweathermap.org/current
 Account in OpenWeather : https://home.openweathermap.org/users/sign_in
