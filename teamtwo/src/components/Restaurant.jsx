@@ -105,4 +105,3 @@ export default class Restaurant extends React.Component {
 //     );
 //   }
 // }
-
