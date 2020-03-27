@@ -1,6 +1,7 @@
 import React from 'react';
 import NasaDisplay from './NasaDisplay';
 import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 export default class Nasa extends React.Component {
     constructor(props) {
@@ -26,8 +27,8 @@ export default class Nasa extends React.Component {
                 'access-control-allow-headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
             }
         };
-
-        fetch(`https://api.nasa.gov/planetary/earth/imagery/?lon=${this.state.long}&lat=${this.state.lat}&cloud_score=false&dim=${this.state.dim}&api_key=${this.state.api_key}`, requestOptions)
+        let url = `https://api.nasa.gov/planetary/earth/imagery/?lon=${this.state.long}&lat=${this.state.lat}&cloud_score=false&dim=${this.state.dim}&api_key=${this.state.api_key}`;
+        fetch(url, requestOptions)
             .then(response => response.json())
             .then(result => {
                 this.setState({
@@ -41,8 +42,10 @@ export default class Nasa extends React.Component {
         return (
             <>
                 <Card>
-                    <h2>Eye in the Sky</h2>
-                    <NasaDisplay url={this.state.img} />
+                    <CardContent>
+                        <h2>Eye in the Sky</h2>
+                        <NasaDisplay url={this.state.img} />
+                    </CardContent>
                 </Card>
             </>
         );

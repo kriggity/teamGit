@@ -1,4 +1,6 @@
 import React from 'react';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 /* 
 Open Weather API -  https://openweathermap.org/current
 Account in OpenWeather : https://home.openweathermap.org/users/sign_in
@@ -25,56 +27,60 @@ export default class Weather extends React.Component {
     }
 
     convertTemp() {
-        
+
         if (this.state.showFahrenheit) {
-            this.setState({tempUnits: " Centigrade"})
+            this.setState({ tempUnits: " Centigrade" })
             url = `${BaseURL}?lat=${this.state.latitude}&lon=${this.state.longitude}&units=metric&appid=${APIkey}`
         } else {
             url = `${BaseURL}?lat=${this.state.latitude}&lon=${this.state.longitude}&units=imperial&appid=${APIkey}`
-            this.setState({tempUnits: " Fahrenheit"})
+            this.setState({ tempUnits: " Fahrenheit" })
         }
-        
-        this.setState({showFahrenheit: !this.state.showFahrenheit})
+
+        this.setState({ showFahrenheit: !this.state.showFahrenheit })
 
         console.log(url)
         fetch(url)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            this.setState({currentTemp: data.main.temp})
-            console.log(`the state variable currentTemp is ${this.state.currentTemp}`)
-        })
-        .catch(err => console.log(err))
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                this.setState({ currentTemp: data.main.temp })
+                console.log(`the state variable currentTemp is ${this.state.currentTemp}`)
+            })
+            .catch(err => console.log(err))
     }
 
 
 
     componentDidMount() {
-        
-            url = `${BaseURL}?lat=${this.state.latitude}&lon=${this.state.longitude}&units=imperial&appid=${APIkey}`
-    
+
+        url = `${BaseURL}?lat=${this.state.latitude}&lon=${this.state.longitude}&units=imperial&appid=${APIkey}`
+
         console.log(url)
         fetch(url)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            this.setState({currentTemp: data.main.temp})
-            console.log(`the state variable currentTemp is ${this.state.currentTemp}`)
-        })
-        .catch(err => console.log(err))
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                this.setState({ currentTemp: data.main.temp })
+                console.log(`the state variable currentTemp is ${this.state.currentTemp}`)
+            })
+            .catch(err => console.log(err))
     }
 
-    render(){
+    render() {
 
         console.log(this.state.latitude);
 
-    return (
-        <>
-            <h2>Weather</h2>
-            <h5>Current temp: {this.state.currentTemp}{this.state.tempUnits}</h5>
-            <button onClick={() => this.convertTemp()}>Convert Temp</button>
+        return (
+            <>
+                <Card>
+                    <CardContent>
+                        <h2>Weather</h2>
+                        <h5>Current temp: {this.state.currentTemp}{this.state.tempUnits}</h5>
+                        <button onClick={() => this.convertTemp()}>Convert Temp</button>
+                    </CardContent>
+                </Card>
 
-        </>
-    );
-}
+            </>
+        );
     }
+}
