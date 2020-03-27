@@ -14,6 +14,7 @@ html, body, #root, .MuiPaper-root h2 {
 }
 .gridWrapper .MuiCard-root {
   background-color:#ccc;
+  height:100%;
 }
 .nasaWrapper .MuiCardMedia-root {
   width:100%;
