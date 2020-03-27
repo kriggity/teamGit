@@ -43,7 +43,15 @@ export default class Restaurant extends React.Component {
             .then(searchData => {
                 this.setState({
                     searchResults: searchData,
-                    single: searchData.nearby_restaurants[0].restaurant.name
+                    single: searchData.nearby_restaurants[0].restaurant.name,
+                    singleTwo: searchData.nearby_restaurants[1].restaurant.name,
+                    singleThree: searchData.nearby_restaurants[2].restaurant.name,
+                    singleFour: searchData.nearby_restaurants[3].restaurant.name,
+                    singleFive: searchData.nearby_restaurants[4].restaurant.name,
+                    singleSix: searchData.nearby_restaurants[5].restaurant.name,
+                    singleSeven: searchData.nearby_restaurants[6].restaurant.name,
+                    singleEight: searchData.nearby_restaurants[7].restaurant.name,
+                    singleNine: searchData.nearby_restaurants[8].restaurant.name,
                 })
                 console.log('state with results', this.state.searchResults) 
                 // console.log(searchData)
@@ -57,16 +65,26 @@ export default class Restaurant extends React.Component {
                 
                 <h2>Restaurants</h2>
                 
-                {this.state.searchResults ? <DisplayRestaurants single={this.state.single} /> : null}
+                {this.state.searchResults ? <DisplayRestaurants 
+                single={this.state.single} 
+                singleTwo={this.state.singleTwo} 
+                singleThree={this.state.singleThree} 
+                singleFour={this.state.singleFour}
+                singleFive={this.state.singleFive}
+                singleSix={this.state.singleSix}
+                singleSeven={this.state.singleSeven}
+                singleEight={this.state.singleEight}
+                singleNine={this.state.singleNine}
+                /> : null}
             </div>
         )
     }
 } 
 // componentDidMount() {
-//     fetch(`https://developers.zomato.com/api/v2.1/geocode?lat=${this.state.latitude}&lon=${this.state.longitude}`, {
+//     fetch(`https://developers.zomato.com/api/v2.1/geocode?lat=${this.props.lat}&lon=${this.props.long}`, {
 //       headers: {
 //         Accept: "application/json",
-//         "User-Key": "c4a72bc0d1013c0944741ce9dc776eba"
+//         "User-Key": "ef2686779cc2ca248052669cc5082fa8"
 //       }
 //     }).then(res => res.json())
 //     .then(json => {
