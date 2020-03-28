@@ -1,15 +1,16 @@
 import React from 'react';
-// import CardContent from '@material-ui/core/CardContent';
-// import CardMedia from '@material-ui/core/CardMedia';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
 export default function RestaurantDisplay(props) {
     return (
-        <>
-            
-            {/* <CardMedia
-                image={props.url}
-                title="Foo"
-            /> */}
-        </>
+            <ListItem button href={loc.restaurant.url}>
+                <ListItemText>
+                    {/* <a href={loc.restaurant.url} target="_blank" rel="noreferrer noopener"> */}
+                    {/* {loc.restaurant.name} */}
+                    {/* </a> */}
+                    {props.name}
+                </ListItemText>
+            </ListItem>
     );
 }

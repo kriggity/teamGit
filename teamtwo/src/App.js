@@ -25,16 +25,16 @@ class App extends React.Component {
         <Container max-width="lg">
           <Grid container spacing={3}>
             <Grid item xs={12} className="header gridWrapper">
-              <h1>What's going on at:<br /><sub>Lat:{this.props.coords.latitude} , Long:{this.props.coords.longitude} </sub></h1>
+              <h1>What's going on at:<br /><sub>Lat: {this.props.coords.latitude}, Long: {this.props.coords.longitude} </sub></h1>
             </Grid>
-            <Grid item xs={12} sm={6} className="weather gridWrapper">
+            <Grid item xs={12} sm={4} className="weather gridWrapper">
               <Weather coords={this.props.coords} />
             </Grid>
-            <Grid item xs={12} sm={6} className="nasaWrapper gridWrapper">
+            <Grid item xs={12} sm={4} className="nasaWrapper gridWrapper">
               <Nasa coords={this.props.coords} />
             </Grid>
-            <Grid item xs={12} className="restaurant gridWrapper">
-              <Restaurant lat={this.props.coords.latitude} long={this.props.coords.longitude} />
+            <Grid item xs={12} sm={4}className="restaurant gridWrapper">
+              <Restaurant coords={this.props.coords} />
             </Grid>
           </Grid>
         </Container>

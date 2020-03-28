@@ -8,7 +8,7 @@ export default class Nasa extends React.Component {
         super(props);
 
         this.state = {
-            img: 'https://via.placeholder.com/311?text=Loading...',
+            img: 'https://via.placeholder.com/900?text=Loading...',
             lat: props.coords.latitude,
             long: props.coords.longitude,
             dim: .0333, // width and height of image in degrees

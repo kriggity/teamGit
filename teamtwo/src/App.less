@@ -1,0 +1,51 @@
+html,
+body,
+#root {
+  background-color: #efefef;
+}
+html,
+body,
+#root,
+.MuiPaper-root h2 {
+  color: rgb(56, 57, 60);
+}
+html {
+  body {
+    #root {
+      .gridWrapper {
+        h1,
+        h2,
+        #gettingData {
+          text-align: center;
+        }
+        h2 {
+          margin-top: 0;
+        }
+        .MuiCard-root {
+          background-color: #ccc;
+          height: 100%;
+          .MuiCardContent-root {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p {
+              color: rgb(56, 57, 60);
+            }
+          }
+        }
+        &.weather .MuiCard-root {
+          text-align: center;
+        }
+        &.nasaWrapper .MuiCardMedia-root {
+          width: 100%;
+          padding-top: 100%;
+        }
+        &.restaurant {
+        }
+      }
+    }
+  }
+}
