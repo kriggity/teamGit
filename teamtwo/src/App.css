@@ -1,0 +1,39 @@
+html,
+body,
+#root {
+  background-color: #efefef;
+}
+html,
+body,
+#root,
+.MuiPaper-root h2 {
+  color: #38393c;
+}
+html body #root .gridWrapper h1,
+html body #root .gridWrapper h2,
+html body #root .gridWrapper #gettingData {
+  text-align: center;
+}
+html body #root .gridWrapper h2 {
+  margin-top: 0;
+}
+html body #root .gridWrapper .MuiCard-root {
+  background-color: #ccc;
+  height: 100%;
+}
+html body #root .gridWrapper .MuiCard-root .MuiCardContent-root h1,
+html body #root .gridWrapper .MuiCard-root .MuiCardContent-root h2,
+html body #root .gridWrapper .MuiCard-root .MuiCardContent-root h3,
+html body #root .gridWrapper .MuiCard-root .MuiCardContent-root h4,
+html body #root .gridWrapper .MuiCard-root .MuiCardContent-root h5,
+html body #root .gridWrapper .MuiCard-root .MuiCardContent-root h6,
+html body #root .gridWrapper .MuiCard-root .MuiCardContent-root p {
+  color: #38393c;
+}
+html body #root .gridWrapper.weather .MuiCard-root {
+  text-align: center;
+}
+html body #root .gridWrapper.nasaWrapper .MuiCardMedia-root {
+  width: 100%;
+  padding-top: 100%;
+}
